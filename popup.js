@@ -16,20 +16,27 @@ var CreateWindowList = () => {
 		}
 		tabs += '</div>';
 
-		$('#windows').append(`<div class="window" id="window${window}"><img id="arrow${window}" class="arrow" src="arrow.png"><p class="winName">${savedWindows[window].name}</p><button class="openButton" id="openBtb${window}">Open</button>${tabs}</div>`);
-		$('#window' + window).click((e) => {
-			if (e.target.id == $('#window' + window).attr('id') ||
-				e.target.id == $('#arrow' + window).attr('id')) 
-			{
-				$('#tabs' + window).toggleClass('tabUrlsHidden');
-				$('#arrow' + window).toggleClass('arrowOpen');
-			}
-		});
-		$('#openBtb' + window).click(() => {
-			OpenWindow(window)
-		})
+		$('#windows').append(`<div class="window" id="window${window}"><img id="arrow${window}" class="arrow" src="arrow.png"><p class="winName">${savedWindows[window].name}</p><button class="openButton" id="${window}">Open</button>${tabs}</div>`);
+		
 		$('#tabs' + window).addClass('tabUrlsHidden');
 	}
+
+	$('.window').click((e) => {
+		if ($(e.target).hasClass('window') ||
+			$(e.target).hasClass('arrow'))
+		{
+			var target = e.target;
+			if ($(e.target).hasClass('arrow')) {
+				target = $(e.target).parent('.window');
+			}
+
+			$(target).children('.tabUrls').toggleClass('tabUrlsHidden');
+			$(target).children('.arrow').toggleClass('arrowOpen');
+		}
+	});
+	$('.openButton').click((e) => {
+		OpenWindow($(e.target).attr('id'))
+	})
 
 	if (empty) {
 		$('#windows').append(`<p>You have no windows saved</p>`);
