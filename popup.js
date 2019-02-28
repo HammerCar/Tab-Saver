@@ -32,6 +32,9 @@ var CreateWindowList = () => {
 
 			$(target).children('.tabUrls').toggleClass('tabUrlsHidden');
 			$(target).children('.arrow').toggleClass('arrowOpen');
+
+			$("html").height('0px');
+			$("body").height('0px');
 		}
 	});
 	$('.openButton').click((e) => {
