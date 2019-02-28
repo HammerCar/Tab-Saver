@@ -1,0 +1,64 @@
+<html>
+<head>
+	<script src="jquery.min.js"></script>
+	<script src="popup.js" defer></script>
+
+	<style>
+		.window {
+			margin-bottom: 5px;
+			padding: 0px 10px;
+			background-color: #eee;
+
+			user-select: none;
+			cursor: hand;
+		}
+
+		.arrow {
+			width: 10px;
+			margin-right: 5px;
+
+			transition: 0.1s;
+		}
+		.arrowOpen {
+			transform: rotate(90deg);
+		}
+
+		.winName {
+			display: inline-block;
+			font-weight: bold;
+			
+			user-select: text;
+			cursor: auto;
+		}
+
+		.openButton {
+			float: right;
+			margin-top: 10px;
+			cursor: auto;
+		}
+
+		.tabUrls {
+			padding-bottom: 10px;
+			
+			user-select: text;
+			cursor: auto;
+		}
+		.tabUrlsHidden {
+			height: 0px;
+			display: none;
+		}
+	</style>
+</head>
+<body style="width: 400px">
+	<div>
+		<h2>Save Window</h2>
+		Name: <input id="name" placeholder="Tabs" autocomplete="false" autofocus>
+		<button id="saveButton">Save and Close</button>
+	</div>
+
+	<div>
+		<h2>Saved Windows</h2>
+		<div id="windows"></div>
+	</div>
+</body>
+</html>
