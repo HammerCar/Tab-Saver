@@ -1,6 +1,11 @@
 # Tab Saver
 Tab Saver is Chrome extension that allows you to easily save an entire window's worth of browser tabs and open them later
 
+## Installation
+1. Download the latest release from <https://github.com/HammerCar/Tab-Saver/releases>
+2. Open <chrome://extensions/>
+3. Drag and drop the downloaded zip into the exstensions tab
+
 ## Usage
 ![alt text](https://github.com/HammerCar/Tab-Saver/raw/master/example.png "Example")
 
