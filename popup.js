@@ -12,7 +12,7 @@ var CreateWindowList = () => {
 
 		var tabs = `<div class="tabUrls" id="tabs${window}">`;
 		for (var tab in savedWindows[window].tabs) {
-			tabs += `<a href="${savedWindows[window].tabs[tab]}" target="_blank">${savedWindows[window].tabs[tab]}</a><br>`;
+			tabs += `<a href="${savedWindows[window].tabs[tab]}" target="_blank" title="${savedWindows[window].tabs[tab]}">${savedWindows[window].tabs[tab]}</a><br>`;
 		}
 		tabs += '</div>';
 
